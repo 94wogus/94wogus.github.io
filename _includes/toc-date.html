@@ -5,27 +5,27 @@
     <nav role="navigation">
         <ul class="summary">
             {% if page.url == "/index.html" or page.url == "/" %}
-            <li class="chapter active" data-level="1.1" data-path="{{site.baseurl}}">
+            <li class="chapter title active" data-level="1.1" data-path="{{site.baseurl}}">
             {% else %}
-            <li class="chapter" data-level="1.1" data-path="{{site.baseurl}}">
+            <li class="chapter title" data-level="1.1" data-path="{{site.baseurl}}">
             {% endif %}
                 <a href="/">
                     {{ site.title | escape }}
                 </a>
             </li>
 
-            {% assign reversed_posts = site.posts | reverse | sort: "category"%}
+            {% assign reversed_posts = site.posts | reverse | sort: "categoryOrder"%}
             {% assign category = "" %}
             {% for post in reversed_posts %}
                 {% if category != post.category %}
                 <li class="divider"></li>
-                <div class="chapter" data-level="1.1">{{post.category}}</div>
+                <div class="chapter-title" data-level="1.1">{{post.category}}</div>
                 {% assign category = post.category %}
                 {% endif %}
                 {% if page.url == post.url %}
-                <li class="post active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
+                <li class="chapter post active" data-level="1.2" data-path="{{site.baseurl}}{{post.url}}">
                 {% else %}
-                <li class="post" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
+                <li class="chapter post" data-level="1.1" data-path="{{site.baseurl}}{{post.url}}">
                 {% endif %}
                     <a href="{{site.baseurl}}{{post.url}}">
                         {{ post.title | escape }}
