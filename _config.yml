@@ -1,6 +1,6 @@
 # Configurations
-title:            Jekyll Gitbook
-longtitle:        Jekyll Gitbook
+title:            RABIT Gitbook
+longtitle:        RABIT Gitbook
 author:           94wogus
 email:            94wogus@gmail.com
 description: >
@@ -38,7 +38,7 @@ permalink:        /:categories/:year-:month-:day-:title:output_ext
 exclude:
   - _drafts
 
-destination:      ./_site
+destination:      ./_dev
 incremental:      false
 regenerate:       true
 
